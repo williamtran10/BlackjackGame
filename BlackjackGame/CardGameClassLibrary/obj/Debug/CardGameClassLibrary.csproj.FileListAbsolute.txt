@@ -1,0 +1,8 @@
+C:\Users\William Tran\Desktop\BlackJack_Student-20181105T022336Z-001\CardGameClassLibrary\bin\Debug\CardGameClassLibrary.dll
+C:\Users\William Tran\Desktop\BlackJack_Student-20181105T022336Z-001\CardGameClassLibrary\bin\Debug\CardGameClassLibrary.pdb
+C:\Users\William Tran\Desktop\BlackJack_Student-20181105T022336Z-001\CardGameClassLibrary\obj\Debug\CardGameClassLibrary.csprojAssemblyReference.cache
+C:\Users\William Tran\Desktop\BlackJack_Student-20181105T022336Z-001\CardGameClassLibrary\obj\Debug\CardGameClassLibrary.CardImages.resources
+C:\Users\William Tran\Desktop\BlackJack_Student-20181105T022336Z-001\CardGameClassLibrary\obj\Debug\CardGameClassLibrary.csproj.GenerateResource.cache
+C:\Users\William Tran\Desktop\BlackJack_Student-20181105T022336Z-001\CardGameClassLibrary\obj\Debug\CardGameClassLibrary.csproj.CoreCompileInputs.cache
+C:\Users\William Tran\Desktop\BlackJack_Student-20181105T022336Z-001\CardGameClassLibrary\obj\Debug\CardGameClassLibrary.dll
+C:\Users\William Tran\Desktop\BlackJack_Student-20181105T022336Z-001\CardGameClassLibrary\obj\Debug\CardGameClassLibrary.pdb
