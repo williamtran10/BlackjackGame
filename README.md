@@ -1,3 +1,3 @@
 # BlackjackGame
 A simple blackjack game by William Tran
-In C# made in Visual Studio 2013
+Made in C# using Visual Studio 2017
