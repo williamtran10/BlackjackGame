@@ -67,6 +67,12 @@
     <Compile Include="frmSingle17.Designer.cs">
       <DependentUpon>frmSingle17.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmSingleCasino.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSingleCasino.Designer.cs">
+      <DependentUpon>frmSingleCasino.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmMainMenu.resx">
@@ -74,6 +80,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmSingle17.resx">
       <DependentUpon>frmSingle17.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSingleCasino.resx">
+      <DependentUpon>frmSingleCasino.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -33,6 +33,11 @@ namespace BlackJack
         //Properties
         //*************************************************************
 
+        public int GetNumOfCards //property to get access to the # of cards
+        {
+            get { return mNumOfCards; }
+        }
+
         //*************************************************************
         //Methods
         //*************************************************************
@@ -46,19 +51,23 @@ namespace BlackJack
             if (Card.CardValue == 1) mHasAce = true;
         }
 
-        public void DrawHand(Graphics g)
+        public void DrawHand(Graphics g, int StartX, int Y)
         {
-            int X = 0; //x value that the cards start at
+            int X = StartX;
 
             //loop through each card in the hand 
             for (int i = 0; i < mNumOfCards; i++)
             {
                 //draw card then add 80 to x so that the next card will be drawn beside it
-                mHand[i].DrawCard(g, X, 100);
+                mHand[i].DrawCard(g, X, Y);
                 X += 80;
             }
         }
 
+        public Card getCard(int NumOfCard) //property to get card
+        {
+            return mHand[NumOfCard];
+        }
 
         public int getScore()
         {

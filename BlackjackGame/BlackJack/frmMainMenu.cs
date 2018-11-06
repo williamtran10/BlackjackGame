@@ -37,6 +37,13 @@ namespace BlackJack
                     NewWindow.ShowDialog();
                     this.Visible = true;
                 }
+                else if (radSingleCasino.Checked == true)
+                {
+                    frmSingleCasino NewWindow = new frmSingleCasino(StartingCash);
+                    this.Visible = false;
+                    NewWindow.ShowDialog();
+                    this.Visible = true;
+                }
             }
             else
             {

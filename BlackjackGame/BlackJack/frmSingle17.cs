@@ -3,8 +3,8 @@ using System.Windows.Forms;
 
 //William Tran
 //Oct 23, 2018
-//Blackjack Game
-//This program lets the player play a game of blackjack against the dealer
+//Singleplayer 17 Blackjack
+//This program lets the player play a game of blackjack against the dealer who is always at 17 points
 
 namespace BlackJack
 {
@@ -59,7 +59,7 @@ namespace BlackJack
         {
             base.OnPaint(e);
             //draw hand
-            if (mPlayer1 != null) mPlayer1.DrawHand(e.Graphics);
+            if (mPlayer1 != null) mPlayer1.DrawHand(e.Graphics, 20, 100);
         }
 
         private void StartNewRound() //resets deck and hand, shuffles, adds 2 cards to hand
@@ -75,12 +75,6 @@ namespace BlackJack
 
             //repaint form
             this.Invalidate();
-
-            //if player is already bust, calculate money won or lost
-            if (mPlayer1.getScore() > 21)
-            {
-                EndRound();
-            }
         }
 
         private void EndRound()

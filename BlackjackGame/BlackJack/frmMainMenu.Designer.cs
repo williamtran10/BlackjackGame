@@ -34,7 +34,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.radioButton4 = new System.Windows.Forms.RadioButton();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radSingleCasino = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
             this.btnGo = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -70,7 +70,7 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.radioButton4);
             this.groupBox1.Controls.Add(this.radioButton3);
-            this.groupBox1.Controls.Add(this.radioButton2);
+            this.groupBox1.Controls.Add(this.radSingleCasino);
             this.groupBox1.Controls.Add(this.rad17Style);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(21, 75);
@@ -126,18 +126,17 @@
             this.radioButton3.Text = "Against Friends Coming Soon...";
             this.radioButton3.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // radSingleCasino
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Enabled = false;
-            this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton2.Location = new System.Drawing.Point(6, 86);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(158, 17);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Casino Style Coming Soon...";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radSingleCasino.AutoSize = true;
+            this.radSingleCasino.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radSingleCasino.Location = new System.Drawing.Point(6, 86);
+            this.radSingleCasino.Name = "radSingleCasino";
+            this.radSingleCasino.Size = new System.Drawing.Size(83, 17);
+            this.radSingleCasino.TabIndex = 1;
+            this.radSingleCasino.TabStop = true;
+            this.radSingleCasino.Text = "Casino Style";
+            this.radSingleCasino.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -276,7 +275,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton radioButton4;
         private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radSingleCasino;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnGo;
         private System.Windows.Forms.Label label3;

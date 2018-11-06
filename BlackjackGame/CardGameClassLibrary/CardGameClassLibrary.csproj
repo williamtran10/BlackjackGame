@@ -217,5 +217,8 @@
   <ItemGroup>
     <None Include="images\Card9.gif" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="images\CardFaceDown.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

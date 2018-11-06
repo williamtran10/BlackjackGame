@@ -103,5 +103,13 @@ namespace BlackJack
             mNextCard++; //increment so that next time the next card will be dealt
             return card;
         }
+
+        public Card DealFaceDown()
+        {
+            Card card = mDeck[mNextCard]; //this is the card that is dealt to player's hand
+            mNextCard++; //increment so that next time the next card will be dealt
+            card.FaceDown = true;
+            return card;
+        }
     }
 }
