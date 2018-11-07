@@ -161,6 +161,7 @@
             this.btnHold.TabIndex = 6;
             this.btnHold.Text = "Hold";
             this.btnHold.UseVisualStyleBackColor = true;
+            this.btnHold.Click += new System.EventHandler(this.btnHold_Click);
             // 
             // label2
             // 
