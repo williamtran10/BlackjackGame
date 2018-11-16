@@ -162,8 +162,9 @@ namespace BlackJack
                 }
                 else if (mPlayer.GetNumOfCards == 2)
                 {
-                    MessageBox.Show("Player's Blackjack beats dealer's 21.\nWin $" + mBet + ".");
-                    mCash += mBet;
+                    int NewBet = (int)(mBet * 1.5);
+                    MessageBox.Show("Player's Blackjack beats dealer's 21.\nWin $" + NewBet + ".");
+                    mCash += NewBet;
                 }
                 else if (mDealer.GetNumOfCards == 2)
                 {
