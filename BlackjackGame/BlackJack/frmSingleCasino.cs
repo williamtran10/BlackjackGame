@@ -45,17 +45,26 @@ namespace BlackJack
             NewGame();
         }
 
-        private void mnuGameHelp_Click(object sender, EventArgs e) //todo update this
+        private void mnuGameHelp_Click(object sender, EventArgs e)
         {
             //show message box with all the rules
-            MessageBox.Show("COMING SOON\n" +
-                "Special Rules:\n" +
-                "The dealer always has 17 points.\n" +
+            MessageBox.Show("Rules:\n" +
+                "Taken from https://wizardofodds.com/games/blackjack/basics/ \n" +
+                "The object of the game is to beat the dealer.\n" +
+                "Aces may be counted as 1 or 11 points, 2 to 9 according to pip value, and tens and face cards count as ten points.\n" +
+                "The value of a hand is the sum of the point values of the individual cards. Except, a \"blackjack\" is the highest hand, consisting of an ace and any 10-point card, and it outranks all other 21-point hands.\n" +
+                "After the player has bet, the dealer will give two cards to each player and two cards to himself. One of the dealer cards is dealt face up.\n" +
+                "If the dealer does have a blackjack, then the player loses, unless the player also has a blackjack, which will result in a tie.\n" +
                 "\n" +
-                "If you score higher than the dealer, you win $10.\n" +
-                "If you score lower than the dealer, you lose $5.\n" +
-                "If you get exactly 21 points, you win $20.\n" +
-                "If your hand is a bust (over 21 points), you lose $10.\n" +
+                "Possible player choices:\n" +
+                "Stand: Player stands pat with his cards.\n" +
+                "Hit: Player draws another card (and more if he wishes). If this card causes the player's total points to exceed 21 (known as \"busting\") then he loses.\n" +
+                "Double: Player doubles his bet and gets one, and only one, more card.\n" +
+                "\n" +
+                "After the player turn, the dealer will add card to his own hand until he gets at least 17 points.\n" +
+                "If the dealer busts, the player wins.\n" +
+                "If the dealer does not bust, then the higher point total between the player and dealer will win.\n" +
+                "Winning wagers pay even money, except a winning player blackjack usually pays 3 to 2\n" +
                 "\n" +
                 "Shortcuts:\n" +
                 "'A' = Deal\n" +
