@@ -13,6 +13,8 @@ using System.Windows.Forms;
 //Singleplayer Casino Blackjack
 //The player play a game of blackjack against the dealer in the casino style
 
+//todo: add stats: starting cash, round number, gross winnings, highest held cash amount
+
 namespace BlackJack
 {
     public partial class frmSingleCasino : Form
@@ -49,6 +51,9 @@ namespace BlackJack
         {
             //show message box with all the rules
             MessageBox.Show("Rules:\n" +
+                "\n" +
+                "The minimum bet is $5\n" +
+                "\n" +
                 "Taken from https://wizardofodds.com/games/blackjack/basics/ \n" +
                 "The object of the game is to beat the dealer.\n" +
                 "Aces may be counted as 1 or 11 points, 2 to 9 according to pip value, and tens and face cards count as ten points.\n" +
@@ -162,7 +167,7 @@ namespace BlackJack
                 }
                 else if (mPlayer.GetNumOfCards == 2)
                 {
-                    int NewBet = (int)(mBet * 1.5);
+                    int NewBet = (int)(mBet * 1.5); //3:2 returns for player Blackjack
                     MessageBox.Show("Player's Blackjack beats dealer's 21.\nWin $" + NewBet + ".");
                     mCash += NewBet;
                 }
@@ -178,8 +183,17 @@ namespace BlackJack
             }
             else if (PlayerScore > DealerScore)
             {
-                MessageBox.Show("Player has higher score than dealer.\nWin bet of $" + mBet + ".");
-                mCash += mBet;
+                if (mPlayer.GetNumOfCards == 2 && PlayerScore == 21)
+                {
+                    int NewBet = (int)(mBet * 1.5); //3:2 returns for player Blackjack
+                    MessageBox.Show("Player's has Blackjack.\nWin $" + NewBet + ".");
+                    mCash += NewBet;
+                }
+                else
+                {
+                    MessageBox.Show("Player has higher score than dealer.\nWin bet of $" + mBet + ".");
+                    mCash += mBet;
+                }
             }
             else if (PlayerScore == DealerScore)
             {
@@ -187,7 +201,14 @@ namespace BlackJack
             }
             else //only other possibility is if PlayerScore < DealerScore
             {
-                MessageBox.Show("Player has lower score than dealer.\nLost bet of $" + mBet + ".");
+                if (mDealer.GetNumOfCards == 2 && DealerScore == 21)
+                {
+                    MessageBox.Show("Dealer has Blackjack.\nLose bet of $" + mBet + ".");
+                }
+                else
+                {
+                    MessageBox.Show("Player has lower score than dealer.\nLose bet of $" + mBet + ".");
+                }
                 mCash -= mBet;
             }
 
@@ -198,7 +219,7 @@ namespace BlackJack
             if (mCash <= 0)
             {
                 //player loses and turn off buttons
-                MessageBox.Show("You lose.\nNo money is left.");
+                MessageBox.Show("You lose.\nYou don't have enough money to meet the $5 minimum bet amount.");
                 btnDeal.Enabled = false;
                 btnHold.Enabled = false;
             }
@@ -207,7 +228,7 @@ namespace BlackJack
                 //start next round
                 if (mBet > mCash) //change bet if it is higher than cash
                 {
-                    mBet = mCash;
+                    mBet = mCash - (mCash % 5); //round bet down to multiple of 5
                     lblBetAmount.Text = "Bet: $" + mBet;
                 }
                 StartBettingStage();
@@ -246,7 +267,8 @@ namespace BlackJack
             //reset and show dollars left
             mCash = mStartingCash;
             lblCashAmount.Text = "Player Bank: $" + mCash;
-            mBet = 1;
+            mBet = 5;
+            lblBetAmount.Text = "Bet: $" + mBet;
 
             //reset buttons
             btnDeal.Enabled = false;
@@ -258,10 +280,10 @@ namespace BlackJack
         private void tmrBetting_Tick(object sender, EventArgs e) //ticks during betting to see if player want to increase/decrease bet
         {
             //bets must be able to be increased/decreased to be changed
-            if((PlayerBetState == BetState.Increase && mBet < mCash )|| (PlayerBetState == BetState.Decrease && mBet > 1))
+            if((PlayerBetState == BetState.Increase && mBet + 5 <= mCash ) || (PlayerBetState == BetState.Decrease && mBet - 5 >= 5))
             {
-                if (PlayerBetState == BetState.Increase) mBet++;
-                else mBet--;
+                if (PlayerBetState == BetState.Increase) mBet += 5;
+                else mBet-= 5;
                 lblBetAmount.Text = "Bet: $" + mBet;
             }
             

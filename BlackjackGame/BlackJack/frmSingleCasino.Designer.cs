@@ -183,7 +183,7 @@
             // 
             // tmrBetting
             // 
-            this.tmrBetting.Interval = 40;
+            this.tmrBetting.Interval = 50;
             this.tmrBetting.Tick += new System.EventHandler(this.tmrBetting_Tick);
             // 
             // btnDouble
