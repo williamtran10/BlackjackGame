@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CardGameClassLibrary {
+namespace BlackJack {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace CardGameClassLibrary {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("CardGameClassLibrary.CardImages", typeof(CardImages).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("BlackJack.CardImages", typeof(CardImages).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

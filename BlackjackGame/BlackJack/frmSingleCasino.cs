@@ -28,7 +28,7 @@ namespace BlackJack
         private Hand mPlayer; //cards in player's hand
         private Hand mDealer; //cards in dealer's hand
         private int mCash; //keeps track of player's money
-        private int mStartingCash; //how much players start with in each game
+        private int mStartingCash; //how much player starts with in each game
         private int mBet; //how much the player has bet
         private BetState PlayerBetState = BetState.None;
 

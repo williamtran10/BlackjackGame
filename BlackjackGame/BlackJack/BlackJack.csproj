@@ -55,6 +55,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Card.cs" />
+    <Compile Include="CardImages.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CardImages.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Deck.cs" />
     <Compile Include="frmMainMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,8 +80,13 @@
     <Compile Include="frmSingleCasino.Designer.cs">
       <DependentUpon>frmSingleCasino.cs</DependentUpon>
     </Compile>
+    <Compile Include="Hand.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CardImages.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>CardImages.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMainMenu.resx">
       <DependentUpon>frmMainMenu.cs</DependentUpon>
     </EmbeddedResource>
@@ -106,10 +118,59 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CardGameClassLibrary\CardGameClassLibrary.csproj">
-      <Project>{694176eb-b16c-4489-9fe2-a7a9648b199b}</Project>
-      <Name>CardGameClassLibrary</Name>
-    </ProjectReference>
+    <Content Include="images\Card1.gif" />
+    <Content Include="images\Card10.gif" />
+    <Content Include="images\Card11.gif" />
+    <Content Include="images\Card12.gif" />
+    <Content Include="images\Card13.gif" />
+    <Content Include="images\Card14.gif" />
+    <Content Include="images\Card15.gif" />
+    <Content Include="images\Card16.gif" />
+    <Content Include="images\Card17.gif" />
+    <Content Include="images\Card18.gif" />
+    <Content Include="images\Card19.gif" />
+    <Content Include="images\Card2.gif" />
+    <Content Include="images\Card20.gif" />
+    <Content Include="images\Card21.gif" />
+    <Content Include="images\Card22.gif" />
+    <Content Include="images\Card23.gif" />
+    <Content Include="images\Card24.gif" />
+    <Content Include="images\Card25.gif" />
+    <Content Include="images\Card26.gif" />
+    <Content Include="images\Card27.gif" />
+    <Content Include="images\Card28.gif" />
+    <Content Include="images\Card29.gif" />
+    <Content Include="images\Card3.gif" />
+    <Content Include="images\Card30.gif" />
+    <Content Include="images\Card31.gif" />
+    <Content Include="images\Card32.gif" />
+    <Content Include="images\Card33.gif" />
+    <Content Include="images\Card34.gif" />
+    <Content Include="images\Card35.gif" />
+    <Content Include="images\Card36.gif" />
+    <Content Include="images\Card37.gif" />
+    <Content Include="images\Card38.gif" />
+    <Content Include="images\Card39.gif" />
+    <Content Include="images\Card4.gif" />
+    <Content Include="images\Card40.gif" />
+    <Content Include="images\Card41.gif" />
+    <Content Include="images\Card42.gif" />
+    <Content Include="images\Card43.gif" />
+    <Content Include="images\Card44.gif" />
+    <Content Include="images\Card45.gif" />
+    <Content Include="images\Card46.gif" />
+    <Content Include="images\Card47.gif" />
+    <Content Include="images\Card48.gif" />
+    <Content Include="images\Card49.gif" />
+    <Content Include="images\Card5.gif" />
+    <Content Include="images\Card50.gif" />
+    <Content Include="images\Card51.gif" />
+    <Content Include="images\Card52.gif" />
+    <Content Include="images\Card6.gif" />
+    <Content Include="images\Card7.gif" />
+    <Content Include="images\Card8.gif" />
+    <Content Include="images\Card9.gif" />
+    <Content Include="images\CardFaceDown.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

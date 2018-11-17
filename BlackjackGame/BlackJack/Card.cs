@@ -51,8 +51,8 @@ namespace BlackJack
         {
             //draw this card or hidden card at the location x and y 
             Bitmap CardToDraw = null;
-            if (mFaceDown) CardToDraw = (Bitmap)CardGameClassLibrary.CardImages.ResourceManager.GetObject("CardFaceDown");
-            else CardToDraw = (Bitmap)CardGameClassLibrary.CardImages.ResourceManager.GetObject(mCardName);
+            if (mFaceDown) CardToDraw = (Bitmap)CardImages.ResourceManager.GetObject("CardFaceDown");
+            else CardToDraw = (Bitmap)CardImages.ResourceManager.GetObject(mCardName);
             g.DrawImage(CardToDraw, x, y);
         }
     }
