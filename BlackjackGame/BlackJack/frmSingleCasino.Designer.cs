@@ -73,27 +73,27 @@
             // mnuGameNewGame
             // 
             this.mnuGameNewGame.Name = "mnuGameNewGame";
-            this.mnuGameNewGame.Size = new System.Drawing.Size(132, 22);
+            this.mnuGameNewGame.Size = new System.Drawing.Size(187, 22);
             this.mnuGameNewGame.Text = "New Game";
             this.mnuGameNewGame.Click += new System.EventHandler(this.mnuGameNewGame_Click);
             // 
             // mnuGameHelp
             // 
             this.mnuGameHelp.Name = "mnuGameHelp";
-            this.mnuGameHelp.Size = new System.Drawing.Size(132, 22);
+            this.mnuGameHelp.Size = new System.Drawing.Size(187, 22);
             this.mnuGameHelp.Text = "Help";
             this.mnuGameHelp.Click += new System.EventHandler(this.mnuGameHelp_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(129, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(184, 6);
             // 
             // mnuGameExit
             // 
             this.mnuGameExit.Name = "mnuGameExit";
-            this.mnuGameExit.Size = new System.Drawing.Size(132, 22);
-            this.mnuGameExit.Text = "Exit";
+            this.mnuGameExit.Size = new System.Drawing.Size(187, 22);
+            this.mnuGameExit.Text = "Return to main menu";
             this.mnuGameExit.Click += new System.EventHandler(this.mnuGameExit_Click);
             // 
             // btnConfirmBet

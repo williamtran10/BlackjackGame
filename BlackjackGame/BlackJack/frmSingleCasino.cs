@@ -11,9 +11,11 @@ using System.Windows.Forms;
 //William Tran
 //Nov 6, 2018
 //Singleplayer Casino Blackjack
-//The player play a game of blackjack against the dealer in the casino style
+//The player play a game of blackjack against the dealer in casino style
 
-//todo: add stats: starting cash, round number, gross winnings, highest held cash amount
+//todo:
+//add stats: starting cash, round number, gross winnings, highest held cash amount
+//clean up win conditions
 
 namespace BlackJack
 {
@@ -85,11 +87,6 @@ namespace BlackJack
 
         private void btnDeal_Click(object sender, EventArgs e)
         {
-            Deal();
-        }
-
-        private void Deal()
-        {
             //add a card to the players hand and redraw
             mPlayer.AddCard(mDeck.Deal());
             Invalidate(); //redraw
@@ -100,15 +97,37 @@ namespace BlackJack
 
         private void btnHold_Click(object sender, EventArgs e)
         {
-            Hold();
-        }
-
-        private void Hold()
-        {
             mDealer.getCard(1).FaceDown = false; //flip up dealers second card and redraw
             while (mDealer.getScore() < 17) mDealer.AddCard(mDeck.Deal()); //keep giving dealer cards until he is at least at 17 points
             this.Invalidate();
             EndRound(); //calculate money won or lost
+        }
+
+        private void btnConfirmBet_Click(object sender, EventArgs e)
+        {
+            //enable game features
+            btnDeal.Enabled = true;
+            btnHold.Enabled = true;
+            if (mBet * 2 <= mCash) btnDouble.Enabled = true;
+            //disable bet features
+            btnConfirmBet.Enabled = false;
+            tmrBetting.Enabled = false;
+
+            StartNewRound();
+        }
+
+        private void btnDouble_Click(object sender, EventArgs e)
+        {
+            mBet *= 2;
+            lblBetAmount.Text = "Bet: $" + mBet;
+
+            //add a card to the players hand and redraw
+            mPlayer.AddCard(mDeck.Deal());
+            Invalidate(); //redraw
+
+            //if player is bust, calculate money won or lost
+            if (mPlayer.getScore() > 21) EndRound();
+            else btnHold.PerformClick();
         }
 
         protected override void OnPaint(PaintEventArgs e) //override OnPaint event
@@ -252,16 +271,6 @@ namespace BlackJack
 
         }
 
-        private void EndBettingStage()
-        {
-            btnDeal.Enabled = true;
-            btnHold.Enabled = true;
-            btnConfirmBet.Enabled = false;
-            tmrBetting.Enabled = false;
-            if ((mBet * 2) <= mCash) btnDouble.Enabled = true;
-            StartNewRound();
-        }
-
         private void NewGame()
         {
             //reset and show dollars left
@@ -291,67 +300,25 @@ namespace BlackJack
 
         private void frmSingleCasino_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.A && btnDeal.Enabled == true)
+            //hotkeys
+            if (e.KeyCode == Keys.A) btnDeal.PerformClick();
+            else if (e.KeyCode == Keys.D) btnHold.PerformClick();
+            else if (e.KeyCode == Keys.Q) btnDouble.PerformClick();
+            else if (e.KeyCode == Keys.Space) btnConfirmBet.PerformClick();
+            else if (tmrBetting.Enabled == true)
             {
-                Deal();
-            }
-            else if (e.KeyCode == Keys.D && btnHold.Enabled == true)
-            {
-                Hold();
-            }
-            else if (e.KeyCode == Keys.Q && btnDouble.Enabled == true)
-            {
-                Double();
-            }
-            else if (e.KeyCode == Keys.W && tmrBetting.Enabled == true)
-            {
-                PlayerBetState = BetState.Increase;
-            }
-            else if (e.KeyCode == Keys.S && tmrBetting.Enabled == true)
-            {
-                PlayerBetState = BetState.Decrease;
-            }
-            else if (e.KeyCode == Keys.Space && btnConfirmBet.Enabled == true)
-            {
-                EndBettingStage();
+                if (e.KeyCode == Keys.W) PlayerBetState = BetState.Increase;
+                else if (e.KeyCode == Keys.S) PlayerBetState = BetState.Decrease;
             }
         }
 
         private void frmSingleCasino_KeyUp(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.W && tmrBetting.Enabled == true)
+            if (tmrBetting.Enabled == true)
             {
-                PlayerBetState = BetState.None;
+                if (e.KeyCode == Keys.W) PlayerBetState = BetState.None;
+                else if (e.KeyCode == Keys.S) PlayerBetState = BetState.None;
             }
-            else if (e.KeyCode == Keys.S && tmrBetting.Enabled == true)
-            {
-                PlayerBetState = BetState.None;
-            }
-        }
-
-        private void btnConfirmBet_Click(object sender, EventArgs e)
-        {
-            EndBettingStage();
-        }
-
-        private void btnDouble_Click(object sender, EventArgs e)
-        {
-            Double();
-        }
-
-        private void Double()
-        {
-            mBet *= 2;
-            lblBetAmount.Text = "Bet: $" + mBet;
-
-            //add a card to the players hand and redraw
-            mPlayer.AddCard(mDeck.Deal());
-            Invalidate(); //redraw
-
-            //if player is bust, calculate money won or lost
-            if (mPlayer.getScore() > 21) EndRound();
-            else Hold();
-
         }
     }
 }
