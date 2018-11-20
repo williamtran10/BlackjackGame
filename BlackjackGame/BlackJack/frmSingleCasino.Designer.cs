@@ -93,7 +93,7 @@
             // 
             this.mnuGameExit.Name = "mnuGameExit";
             this.mnuGameExit.Size = new System.Drawing.Size(187, 22);
-            this.mnuGameExit.Text = "Return to main menu";
+            this.mnuGameExit.Text = "Return to Main Menu";
             this.mnuGameExit.Click += new System.EventHandler(this.mnuGameExit_Click);
             // 
             // btnConfirmBet
@@ -144,7 +144,7 @@
             // btnDeal
             // 
             this.btnDeal.Enabled = false;
-            this.btnDeal.Location = new System.Drawing.Point(12, 73);
+            this.btnDeal.Location = new System.Drawing.Point(12, 132);
             this.btnDeal.Name = "btnDeal";
             this.btnDeal.Size = new System.Drawing.Size(75, 37);
             this.btnDeal.TabIndex = 5;
@@ -155,7 +155,7 @@
             // btnHold
             // 
             this.btnHold.Enabled = false;
-            this.btnHold.Location = new System.Drawing.Point(93, 73);
+            this.btnHold.Location = new System.Drawing.Point(93, 132);
             this.btnHold.Name = "btnHold";
             this.btnHold.Size = new System.Drawing.Size(75, 37);
             this.btnHold.TabIndex = 6;
@@ -189,7 +189,7 @@
             // btnDouble
             // 
             this.btnDouble.Enabled = false;
-            this.btnDouble.Location = new System.Drawing.Point(12, 123);
+            this.btnDouble.Location = new System.Drawing.Point(12, 86);
             this.btnDouble.Name = "btnDouble";
             this.btnDouble.Size = new System.Drawing.Size(75, 37);
             this.btnDouble.TabIndex = 9;
@@ -218,6 +218,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmSingleCasino";
             this.Text = "frmSingleCasino";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmSingleCasino_FormClosing);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmSingleCasino_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.frmSingleCasino_KeyUp);
             this.menuStrip1.ResumeLayout(false);

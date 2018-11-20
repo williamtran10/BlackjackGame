@@ -320,5 +320,13 @@ namespace BlackJack
                 else if (e.KeyCode == Keys.S) PlayerBetState = BetState.None;
             }
         }
+
+        private void frmSingleCasino_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("Are you sure you want to return to the main menu?", "Blackjack", MessageBoxButtons.YesNo) == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
+        }
     }
 }
